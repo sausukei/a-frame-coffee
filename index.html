@@ -9,14 +9,12 @@
         <a-camera></a-camera>
         <!-- <a-entity oculus-touch-controls="hand: left"></a-entity>
         <a-entity oculus-touch-controls="hand: right"></a-entity> -->
-        <a-entity laser-controls="hand: left"></a-entity>
-        <a-entity laser-controls="hand: right"></a-entity>
+        <a-entity id="leftHand" hand-tracking-grab-controls="hand: left;"></a-entity>
+        <a-entity id="rightHand" hand-tracking-grab-controls="hand: right;"></a-entity>
+
         <a-entity>
 
-            <a-gltf-model src="coffee_pot.glb" position="0 2 -1" scale="1 1 1" animation="property: rotation; to: 0 360 0; dur: 3000; loop: true; easing: linear;"></a-gltf-model>
-        </a-entity>
-        <a-entity id="player" >
-          <a-entity class="collidable" collider-check raycaster="objects: .collidable; showLine:true;" position="0 1 0"></a-entity>
+            <a-gltf-model grabbable class="collidable" src="coffee_pot.glb" position="0 2 -1" scale="1 1 1" animation="property: rotation; to: 0 360 0; dur: 3000; loop: true; easing: linear;"></a-gltf-model>
         </a-entity>
         
       
