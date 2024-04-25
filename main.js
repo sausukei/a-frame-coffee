@@ -1,11 +1,20 @@
-AFRAME.registerComponent('thumbstick-logging',{
-    init: function () {
-      this.el.addEventListener('thumbstickmoved', this.logThumbstick);
-    },
-    logThumbstick: function (evt) {
-      if (evt.detail.y > 0.95) { console.log("DOWN"); }
-      if (evt.detail.y < -0.95) { console.log("UP"); }
-      if (evt.detail.x < -0.95) { console.log("LEFT"); }
-      if (evt.detail.x > 0.95) { console.log("RIGHT"); }
-    }
-  });
+AFRAME.registerComponent('collider-check', {
+  dependencies: ['raycaster'],
+
+  init: function () {
+    this.el.addEventListener('raycaster-intersection', function () {
+      
+      
+    });
+  }
+});
+
+AFRAME.registerComponent('collider-check', {
+  dependencies: ['raycaster'],
+
+  init: function () {
+    this.el.addEventListener('raycaster-intersection', function () {
+      this.el.setAttribute('animation__click', 'property: scale; to: 3 3 3; startEvents: click; dur:200');
+    });
+  }
+});
