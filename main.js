@@ -12,12 +12,16 @@ document.addEventListener('DOMContentLoaded', function() {
   function handleGrabStart() {
     var particleSystem = document.querySelector('#particleSystem');
     particleSystem.setAttribute('visible', 'true');
+    var pot = document.getElementbyId('pot');
+    pot.removeAttribute("animate");
   }
   
   // 物体が離されたときのイベントを処理する関数
   function handleGrabEnd() {
     var particleSystem = document.querySelector('#particleSystem');
     particleSystem.setAttribute('visible', 'false');
+    
+
   }
   
   // 物体が掴まれたときと離されたときのイベントを監視する
