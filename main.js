@@ -26,7 +26,11 @@ document.addEventListener('DOMContentLoaded', function() {
   function handleGrabEnd() {
     var particleSystem = document.querySelector('#particleSystem');
     particleSystem.setAttribute('visible', 'false');
-    
+    var myObject = document.querySelector('#pot');
+    var animation = myObject.getAttribute('animation');
+    if (animation) {
+      myObject.play();
+    }
 
   }
   
