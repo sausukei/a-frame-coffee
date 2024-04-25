@@ -4,6 +4,7 @@
     <!-- A-Frameと背景モジュールのCDN -->
     <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-environment-component@1.3.0/dist/aframe-environment-component.min.js"></script>
+    <!-- <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script> -->
     <script src="./main.js"">
     </script>
   </head>
@@ -28,10 +29,19 @@
         </a-camera>
         <!-- Plane, Shapes -->
         <a-plane position="0 0.1 0" rotation="-90 0 0" width="2" height="2" color="#7BC8A4"></a-plane>
-        <a-box class="collidable" position="-1.5 0.5 -2.5" rotation="0 20 0" color="#4CC3D9"></a-box>
-        <a-sphere class="collidable" position="0 0.5 -3" radius="0.5" color="#EF2D5E"></a-sphere>
-        <a-cylinder class="collidable" position="1.5 0.5 -2.5" radius="0.5" height="1" color="#FFC65D"></a-cylinder>
+        <!-- <a-entity position="0 2.25 -15" particle-system="preset: dust"></a-entity> -->
+
+        <!-- <a-box class="collidable" position="-1.5 0.5 -2.5" rotation="0 20 0" color="#4CC3D9"></a-box> -->
+        <!-- <a-sphere class="collidable" position="0 0.5 -3" radius="0.5" color="#EF2D5E"></a-sphere> -->
+        <!-- <a-cylinder class="collidable" position="1.5 0.5 -2.5" radius="0.5" height="1" color="#FFC65D"></a-cylinder> -->
+        <a-entity>
          <a-gltf-model src="glb/coffee_pot.glb" position="0 1 -4" scale="1 1 1" animation="property: rotation; to: 0 360 0; dur: 3000; loop: true; easing: linear;"></a-gltf-model>
+        </a-entity>
+        <a-gltf-model src="glb/cup.glb" position="0 0.5 -4" scale="1 1 1" ></a-gltf-model>
+       
+         <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
+         <!-- <a-sky color="#000000"></a-sky> -->
+         
 
       </a-scene>
   </body>
