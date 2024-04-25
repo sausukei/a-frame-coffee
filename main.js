@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var particleSystem = document.querySelector('#particleSystem');
     particleSystem.setAttribute('visible', 'true');
     var pot = document.getElementbyId('pot');
-    pot.removeAttribute("animate");
+    pot.removeAttribute("animation");
   }
   
   // 物体が離されたときのイベントを処理する関数
