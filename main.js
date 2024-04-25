@@ -44,9 +44,12 @@ AFRAME.registerComponent('collide', {
       var createEffect = function(point, particleAge) {
         var pointStr = point.x + ' ' + point.y + ' ' + point.z;
         var effect = document.createElement('a-entity');
+        let color1 = "#" + Math.floor(Math.random() * 16777215).toString(16);
+        console.log(color1)
+        // let color2 = "rgb(" + (~~(256 * Math.random())) + ", " + (~~(256 * Math.random())) + ", " + (~~(256 * Math.random())) + ")" ;
         effect.setAttribute('position', pointStr);
         effect.setAttribute('raycaster', 'enabled: false');
-        effect.setAttribute('particle-system', 'color: #ff0, #ff9;maxParticleCount: 100;maxAge: ' + (particleAge / 1000) + ';velocityValue:0 -1 0; accelerationValue: 0 0.5 0; duration: 1;');
+        effect.setAttribute('particle-system', 'color: '+color1+';maxParticleCount: 100;maxAge: ' + (particleAge / 1000) + ';velocityValue:0 -1 0; accelerationValue: 0 0.5 0; duration: 1;');
         return effect;
       };
       var point = e.detail.intersection.point;
