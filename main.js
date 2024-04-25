@@ -1,13 +1,4 @@
-AFRAME.registerComponent('grababble-check', {
-  dependencies: ['raycaster'],
 
-  init: function () {
-    this.el.addEventListener('raycaster-intersection', function () {
-      
-      
-    });
-  }
-});
 
 // var rightHand = document.getElementById('rightHand');
 
@@ -16,14 +7,26 @@ AFRAME.registerComponent('grababble-check', {
 //   sphere.setAttribute('position', event.detail.position);
 // });
 
-let pot = document.getElementById("pot");
-pot.addEventListener('grab-start', function(event){
-  coffee = document.querySelector('pot');
-  coffee.removeAttribute("animation");
 
+document.addEventListener('DOMContentLoaded', function() {
+  function handleGrabStart() {
+    var particleSystem = document.querySelector('#particleSystem');
+    particleSystem.setAttribute('visible', 'true');
+  }
+  
+  // 物体が離されたときのイベントを処理する関数
+  function handleGrabEnd() {
+    var particleSystem = document.querySelector('#particleSystem');
+    particleSystem.setAttribute('visible', 'false');
+  }
+  
+  // 物体が掴まれたときと離されたときのイベントを監視する
+  var myObject = document.getElementById('pot');
+  if (myObject !== null) {
+    myObject.addEventListener('grab-start', handleGrabStart);
+    myObject.addEventListener('grab-end', handleGrabEnd);
+  }else {
+    console.log('要素が見つかりませんでした。');
+  }
+  
 });
-
-pot.addEventListener('grab-end', function(event){
-  coffee=document.querySelector('pot');
-  coffee.setAttribute('animation', 'property: rotation; to: 0 360 0; loop: true; dur: 2000');
-})

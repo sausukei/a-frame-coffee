@@ -17,9 +17,10 @@
         <a-entity>
             <a-gltf-model id="pot"grabbable class="collidable" src="coffee_pot.glb" position="0 1 -1" scale="1 1 1" animation="property: rotation; to: 0 360 0; dur: 3000; loop: true; easing: linear;"></a-gltf-model>
         </a-entity>
-        
+        <a-entity particle-system="preset: snow; color: #ffffff; particleCount: 1000" position="0 2 -5" visible="falses" id="particleSystem"></a-entity>
       
         <a-gltf-model class="collidable"  src="cup.glb" position="0 0.2 -1" scale="1 1 1" ></a-gltf-model>
+        <a-sky color="#6EBAA7"></a-sky>
     </a-scene>
   </body>
 </html>
