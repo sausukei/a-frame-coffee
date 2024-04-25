@@ -4,10 +4,10 @@
     <script src="main.js"></script>
   </head>
   <body>
-    <a-scene>
+    <a-scene xr-mode-ui="enabled: false">
         <a-box></a-box>
         <a-camera></a-camera>
-        <a-scene xr-mode-ui="enabled: false"></a-scene>
+        
         <!-- <a-entity oculus-touch-controls="hand: left"></a-entity>
         <a-entity oculus-touch-controls="hand: right"></a-entity> -->
         <a-entity id="leftHand" hand-tracking-grab-controls="hand: left;"></a-entity>
@@ -19,6 +19,6 @@
         
       
         <a-gltf-model class="collidable"  src="cup.glb" position="0 0.2 -1" scale="1 1 1" ></a-gltf-model>
-    </a-scene> 
+    </a-scene>
   </body>
 </html>
